@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+
+<head>
+	<meta charset="UTF-8"/>
+	<title>Starship game</title>
+	<meta name="keywords" content="animation"/>
+	<link rel="stylesheet" type="text/css" href="./style/style.css" title="starship style"/>
+</head>
+<body>
+
+	<canvas id="stars" width="1000" height="400" tabindex="1">
+	</canvas>
+
+	<div id="control">
+	    <button id="nouvelleSoucoupe">1 <img src="images/flyingSaucer-petit.png" width="48" alt="nouvelle soucoupe volante"/></button>
+	    <button id="flotteSoucoupes">&#8734; <img src="images/flyingSaucer-petit.png" width="48" alt="nouvelle soucoupe volante"/></button>
+	    score  : <span id="score"> 0 </span>
+	</div>
+
+	<div>
+	<h2>Choisissez la couleur du laser : </h2>
+	<div class="radios">
+		<label for="rouge">
+			<input type="radio" name="tir" id="rouge" value="1" checked/>
+			<span>Rouge</span>
+		</label>
+		<label for="bleu">
+			<input type="radio" name="tir" id="bleu" value="2" />
+			<span>Bleu</span>
+		</label>
+		<label for="gris">
+			<input type="radio" name="tir" id="gris" value="3" />
+			<span>Gris</span>
+		</label>
+	</div>
+</div>
+
+<div>
+<h2>Choisissez votre background : </h2>
+<div class="radios">
+	<label for="ciel">
+		<input type="radio" name="back" id="ciel" value="ciel" checked/>
+		<span>Ciel Nocturne</span>
+	</label>
+	<label for="ville">
+		<input type="radio" name="back" id="ville" value="ville" />
+		<span>Ville</span>
+	</label>
+	<label for="foret">
+		<input type="radio" name="back" id="foret" value="foret" />
+		<span>Forêt</span>
+	</label>
+</div>
+</div>
+</body>
+
+</html>
