@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mot de passe oublié</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="stylesheets/registration.css" />
+    <script src="../javascripts/reset.client.js" defer="true"></script>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="form pass-reset">
+        <a class="logo" href="https://www.univ-lille.fr/">
+          <img src="img/logo.png" height="100" weight="100" alt="Logo" />
+        </a>
+        <p>
+          <label>Login<span>*</span></label>
+          <input type="text" placeholder="login" value="" id="userlogin" />
+        </p>
+        <p>
+          <label>
+            <a href="/access/login">je me souviens de mon mot de passe</a>
+          </label>
+          <button id="reset">Reset</button>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/registration.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../javascripts/login.client.js" defer="true"></script>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="form login">
+        <a class="logo" href="https://www.univ-lille.fr/">
+          <img src="img/logo.png" height="100" weight="100" alt="Logo" />
+        </a>
+        <p>
+          <label for="userlogin">Login<span>*</span></label>
+          <input
+            type="text"
+            placeholder="login"
+            value=""
+            id="userlogin"
+            required
+          />
+        </p>
+        <p>
+          <label>Mot de passe<span>*</span></label>
+          <input
+            type="password"
+            placeholder="mot de passe"
+            value=""
+            id="userpassword"
+            required
+          />
+        </p>
+        <p>
+          <label>
+            <a href="/access/reset">Mot de passe oublié?</a>
+            <a href="/access/register">Créer un compte</a>
+          </label>
+          <button id="login">Login</button>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

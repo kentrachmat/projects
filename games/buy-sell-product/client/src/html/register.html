@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="stylesheets/registration.css" />
+    <script src="../javascripts/register.client.js" defer="true"></script>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="form registration">
+        <a class="logo" href="https://www.univ-lille.fr/">
+          <img src="img/logo.png" height="100" weight="100" alt="Logo" />
+        </a>
+        <p>
+          <label for="username">Nom<span>*</span></label>
+          <input type="text" placeholder="nom" value="" id="username" />
+        </p>
+        <p>
+          <label for="userlogin">Login<span>*</span></label>
+          <input type="text" placeholder="login" value="" id="userlogin" />
+        </p>
+        <p>
+          <label>Email<span>*</span></label>
+          <input
+            type="email"
+            placeholder="email@univ-lille.fr"
+            value=""
+            id="useremail"
+            required
+          />
+        </p>
+        <p>
+          <label>Mot de passe<span>*</span></label>
+          <input
+            type="password"
+            placeholder="mot de passe"
+            value=""
+            id="userpassword"
+          />
+        </p>
+        <p>
+          <label>
+            <a href="/access/login">vous avez déjà un compte ?</a>
+          </label>
+          <button id="register">Register</button>
+          <!-- <button style="margin-top: 10px" id="adminregister">
+            Register as admin
+          </button> -->
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
