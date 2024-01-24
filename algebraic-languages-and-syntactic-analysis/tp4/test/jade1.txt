@@ -1,0 +1,8 @@
+pendown 
+setstep 20
+while (posx < 200){
+east
+if (posx  < 100)
+north
+else south
+}
