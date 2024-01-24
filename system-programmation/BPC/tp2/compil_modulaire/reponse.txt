@@ -1,0 +1,62 @@
+Exercise 15
+put_numbers.c
+ici on ne peut pas exécuter le code car il n'y a pas de main
+
+Exercise 16
+numbers-test.c avec fonctions priveés par static
+
+Exercise 17
+numbers-test.c
+pour éviter le warning, nous devons déclarer une fonction l'externe
+
+Exercise 18
+put_numbers.h
+
+Exercise 19
+> cc -o numbers-test numbers-test.o put_numbers.o 
+
+Exercise 20
+> chmod a+x compile_test_numbers.sh
+> ./compile_test_numbers.sh 
+
+Exercise 21, 22
+Makefile
+Note : Je ne peux pas utiliser $^ car Je voudrais placer les fichiers dans le dossier module
+
+Exercise 23
+fichier qui a été modifié
+
+Scenario 1: foo.h, Makefile
+Scenario 2: foo.h, foo.c, Makefile
+Scenario 3: foo.h, main.c, Makefile
+
+Exercise 24
+> gcc -c -O0 -g test_gdb.c
+> gcc -o test test_gdb.o
+> gdb ./test
+
+Pour voir les valeurs dans la boucle, il faut utiliser
+> breakpoint 16 -> run > next / print sum (pour affiche la valeur)
+
+Correction : i <= 9
+Note : ssh login@a12p2.fil.univ-lille1.fr, pour lancer le gdb en mac
+
+Exercise 25
+L’outil ASan
+> gcc -c -O0 -g -fsanitize=address test_gdb.c
+> gcc -o test -O0 -g -fsanitize=address test_gdb.o
+> ./test
+
+Si nous exécutons le fichier qui a une code source fautive, nous aurons
+==651979==ERROR: AddressSanitizer: stack-buffer-overflow on address 
+...
+...
+
+Exercise 26
+L’outil ASan et gdb
+> gcc -c -O0 -g -fsanitize=address test_gdb.c
+> gcc -o test -O0 -g -fsanitize=address test_gdb.o
+> ASAN_OPTIONS="abort_on_error=1" gdb ./test
+
+run -> back -> frame 7 -> print i = 10
+le i n'est pas un index valide de tab car le longeur de tab est 10 (donc la valeur max de i est 9)

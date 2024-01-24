@@ -1,0 +1,13 @@
+div.editButton {
+  display : inline-block;
+  padding : 4px;
+  margin-left : 5px;
+  color : blue;
+  font-weight : bold;
+  font-size: 20px;
+}
+
+div.editButton:hover {
+  transform : scale(2);
+  cursor : pointer;
+}

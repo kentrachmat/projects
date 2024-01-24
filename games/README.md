@@ -14,10 +14,3 @@ pip3 install DateTime
 pip3 install turtle
 pip3 install tkinter
 ```
-
-## Games
-
-* `hangman/Hangman.py` Python based hangman game
-* `battleship/` Python based battleship game with a tkinter interface (Fr)
-* `turtle/Turtle.py` Designing algorithm with Python (turtle)
-* `sudoku/` Solving sudoku problem with SAT algorithm (Python)

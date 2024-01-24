@@ -1,0 +1,65 @@
+Exercise 1
+man putchar
+
+Exercise 2
+emacs --version
+
+Exercise 3
+C = Ctrl
+M = Meta / Alt
+
+Exercise 4, 5, 6, 9
+Git
+
+Exercise 7
+fichier exo7.c
+
+Exercise 8
+fichier prog1.c
+
+Exercise 10
+la mise en commentaire : M-x indent-for-comment
+
+décommenter : C-u M-x comment-kill
+
+fichier exo10.c
+
+Exercise 11
+Hi!
+
+Exercise 12
+../theme1-g6-y21 gcc prog1.c -o prog1_run
+
+../theme1-g6-y21 ./prog1_run
+
+Exercise 13
+ils sont les mêmes
+
+Exercise 14
+fichier exo14.c
+
+Exercise 15
+fichier prog
+
+../theme1-g6-y21 gcc -o0 -o prog_run prog.c
+
+../theme1-g6-y21 gdb ./prog_run
+
+Exercise 16
+fichier exo16.c
+
+Exercise 17, 18, 19, 20, 21
+fichier numbers.c et functiond.h
+
+Exercise 22
+fichier numbers.c, numbers-test.c et functiond.h
+
+Exercise 23
+Terminal : 
+cc -o execute numbers-test.c
+./execute > tmp
+diff tmp numbers-out.txt
+# Maintenant il n'y a pas de différence entre tmp et numbers-out.txt
+
+Exercise 24
+Makefile

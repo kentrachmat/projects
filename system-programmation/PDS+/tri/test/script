@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for i in {0..100000}
+do
+     echo -e $RANDOM >> test1000
+done
+
+
+#END

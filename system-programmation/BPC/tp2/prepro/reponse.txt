@@ -1,0 +1,54 @@
+Exercise 1
+- 
+
+Exercise 2 
+gcc macro1.c -D T=65 -> DA
+
+Exercise 3 
+> gcc -c macro1.c 
+> gcc -o prog macro1.o
+> ./prog -> DB
+
+Exercise 4
+> gcc -E macro1.c | grep -v "#"
+le préprosesseur change la symbole T en 65 + 1
+
+Exercice 5
+exo5.c
+
+Exercice 6
+(macrop.c)
+putchar('0'+i0); -> 0
+putchar('0'+i4); -> 1
+
+Exercice 7
+Si nous voulons vérifier le code IF, nous utilisons 
+> cc -E compcond.c -D NO_LOG
+
+Exercice 8
+> gcc compcond.c -DNO_LOG -> rien
+> gcc compcond.c -> 3
+
+Exercice 9
+> gcc compchk.c 
+Si le symbole SIZE n'est pas déclaré il génère une erreur
+
+Exercice 10
+> gcc compchk.c -D SIZE=5
+Si SIZE % 2 != 0, il générera un warning
+à cause de la condition SIZE & (SIZE-1)
+
+Exercice 11
+guard.c
+
+Exercice 12
+dans stdio.h il y a 408 lignes + notre fonction 13 lignes = 421
+> cc -o test exo12.c -> 6
+avec #include <stdio.h>
+
+Exercice 13
+guard.c, abs.h, minmax,h
+Cela nous montre une erreur car la fonction abs est appelée 2 fois
+
+Exercice 14
+modification en abs.h
