@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quicksort &#8212; Module tp-rapide 0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="element module" href="modules.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="element module"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Module tp-rapide 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Quicksort</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="quicksort">
+<h1>Quicksort<a class="headerlink" href="#quicksort" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">element</span></code> module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#module-generate"><code class="xref py py-mod docutils literal notranslate"><span class="pre">generate</span></code> module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#module-sorting"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sorting</span></code> module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#module-test"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test</span></code> module</a></li>
+</ul>
+</div>
+<div class="section" id="etat-du-tp">
+<h2>Etat du TP<a class="headerlink" href="#etat-du-tp" title="Permalink to this headline">¶</a></h2>
+<p>Date : 27 / 02 / 2021</p>
+<ul class="simple">
+<li><p>Les fonctions ont bien été implantées.</p></li>
+</ul>
+</div>
+<div class="section" id="reponses-aux-questions">
+<h2>Réponses aux questions<a class="headerlink" href="#reponses-aux-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rappels-sur-le-tri-rapide">
+<h3>1. Rappels sur le tri Rapide :<a class="headerlink" href="#rappels-sur-le-tri-rapide" title="Permalink to this headline">¶</a></h3>
+<p>Réponses aux questions concernant la <em>Rappels sur le tri rapide</em>.</p>
+<div class="section" id="question-1">
+<h4><em>Question 1</em> :<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Tri par insertion</p></li>
+<li><p>Tri par sélection</p></li>
+<li><p>Tri bulle</p></li>
+</ul>
+</div>
+<div class="section" id="question-3">
+<h4><em>Question 3</em> :<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h4>
+<p>Après la partition les élément qui se trouvent avant le pivot sont tous inférieurs à ce dernier, le reste des éléments qui se trouvent
+après le pivot sont tous supérieurs ou égales à ce dernier.</p>
+</div>
+<div class="section" id="question-2-4-5-6-7-8">
+<h4><em>Question 2,4,5,6,7,8</em> :<a class="headerlink" href="#question-2-4-5-6-7-8" title="Permalink to this headline">¶</a></h4>
+<p>Dans sorting.py</p>
+</div>
+<div class="section" id="question-9">
+<h4><em>Question 9</em> :<a class="headerlink" href="#question-9" title="Permalink to this headline">¶</a></h4>
+<p>L’espace mémoire supplémentaire utilisé lors d’un tri rapide d’un tableau de longeur n est : 2*log2(n)
+à chaque appel récursif on a deux dictionnaires qui sont générer et puis l’un des deux qui sera traité.</p>
+</div>
+</div>
+<div class="section" id="selection-du-pivot">
+<h3>2. Sélection du pivot :<a class="headerlink" href="#selection-du-pivot" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4><em>Question 1</em><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Le meilleur des cas correspond à celui où à chaque appel récursif, le pivot choisi sépare la liste en deux listes d’égales longueur (à un près), dans ce cas le pivot est la médian du tableau.</p>
+</div>
+<div class="section" id="question-2-3">
+<h4><em>Question 2,3</em> :<a class="headerlink" href="#question-2-3" title="Permalink to this headline">¶</a></h4>
+<p>Dans sorting.py</p>
+</div>
+<div class="section" id="question-4">
+<h4><em>Question 4</em><a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><img alt="_images/tp_rapide.png" src="_images/tp_rapide.png" />
+</div></blockquote>
+</div>
+<div class="section" id="question-5">
+<h4><em>Question 5</em><a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h4>
+<dl class="simple">
+<dt>Dans ce cas, les équations de récurrence est:</dt><dd><ul class="simple">
+<li><p>c(n)=0 si n≤1</p></li>
+<li><p>c(n) = c(⌊n−1/2⌋) + c(⌈n−1/2⌉) + n−1 ∀ n≥2.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="pivot-reellement-optimal">
+<h3>3. Pivot réellement optimal :<a class="headerlink" href="#pivot-reellement-optimal" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h4><em>Question 1</em><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>En ajoutant aux comparaisons comptées celles de la fonction calculant le pivot, le tri rapide avec choix du pivot optimal n’est pas toujours le meilleur car trié le tableau pour avoir la médian coute chère.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Quicksort</a><ul>
+<li><a class="reference internal" href="#etat-du-tp">Etat du TP</a></li>
+<li><a class="reference internal" href="#reponses-aux-questions">Réponses aux questions</a><ul>
+<li><a class="reference internal" href="#rappels-sur-le-tri-rapide">1. Rappels sur le tri Rapide :</a><ul>
+<li><a class="reference internal" href="#question-1"><em>Question 1</em> :</a></li>
+<li><a class="reference internal" href="#question-3"><em>Question 3</em> :</a></li>
+<li><a class="reference internal" href="#question-2-4-5-6-7-8"><em>Question 2,4,5,6,7,8</em> :</a></li>
+<li><a class="reference internal" href="#question-9"><em>Question 9</em> :</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#selection-du-pivot">2. Sélection du pivot :</a><ul>
+<li><a class="reference internal" href="#id1"><em>Question 1</em></a></li>
+<li><a class="reference internal" href="#question-2-3"><em>Question 2,3</em> :</a></li>
+<li><a class="reference internal" href="#question-4"><em>Question 4</em></a></li>
+<li><a class="reference internal" href="#question-5"><em>Question 5</em></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pivot-reellement-optimal">3. Pivot réellement optimal :</a><ul>
+<li><a class="reference internal" href="#id2"><em>Question 1</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">element</span></code> module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="element module"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Module tp-rapide 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Quicksort</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2021, Aziz__BOURAHMA--Benedictus__KENT__RACHMAT, ULille.
+      Last updated on 08/03/2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test &#8212; Module tp-rapide 0 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Module tp-rapide 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">test</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for test</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">:mod:`test` module : test module for quicksort assignment</span>
+
+<span class="sd">:author: `FIL - IEEA - Univ. Lille1.fr &lt;http://portail.fil.univ-lille1.fr&gt;`_</span>
+
+<span class="sd">:date: 2016, january</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sorting</span>
+<span class="kn">import</span> <span class="nn">generate</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">from</span> <span class="nn">element</span> <span class="kn">import</span> <span class="n">Element</span>
+
+<span class="k">global</span> <span class="n">cpt</span>
+
+<div class="viewcode-block" id="cmp"><a class="viewcode-back" href="../modules.html#test.cmp">[docs]</a><span class="k">def</span> <span class="nf">cmp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A comparison function</span>
+
+<span class="sd">    :param a: First element    </span>
+<span class="sd">    :param b: Second element</span>
+<span class="sd">    :return: 0 if a == b, 1 if a &gt; b, -1 if a &lt; b</span>
+<span class="sd">    :rtype: int</span>
+
+<span class="sd">    &gt;&gt;&gt; from element import Element</span>
+<span class="sd">    &gt;&gt;&gt; cpt = 0</span>
+<span class="sd">    &gt;&gt;&gt; cmp(Element(10),Element(5))</span>
+<span class="sd">    1</span>
+<span class="sd">    &gt;&gt;&gt; cmp(Element(5),Element(5))</span>
+<span class="sd">    0</span>
+<span class="sd">    &gt;&gt;&gt; cmp(Element(5),Element(10))</span>
+<span class="sd">    -1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">cpt</span>
+    <span class="n">cpt</span> <span class="o">=</span> <span class="n">cpt</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">Element</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">cpt</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="kn">import</span> <span class="nn">doctest</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="n">generate</span><span class="o">.</span><span class="n">random_array</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">tt</span> <span class="o">=</span> <span class="n">sorting</span><span class="o">.</span><span class="n">merge_sort</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">cmp</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">tt</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">generate</span><span class="o">.</span><span class="n">is_sorted</span> <span class="p">(</span><span class="n">tt</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes !!&quot;</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Array has not been correctly sorted by merge sort&quot;</span><span class="p">)</span>
+
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    
+    <span class="n">sorting</span><span class="o">.</span><span class="n">quicksort</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span><span class="n">cmp</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">generate</span><span class="o">.</span><span class="n">is_sorted</span> <span class="p">(</span><span class="n">t2</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes !!&quot;</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Array has not been correctly sorted by quicksort&quot;</span><span class="p">)</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Module tp-rapide 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">test</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2021, Aziz__BOURAHMA--Benedictus__KENT__RACHMAT, ULille.
+      Last updated on 08/03/2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

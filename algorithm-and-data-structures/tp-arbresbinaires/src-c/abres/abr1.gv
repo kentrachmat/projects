@@ -1,0 +1,27 @@
+digraph G{
+N34 [label="6"]
+N35 [label="4"]
+N36 [label="2"]
+N37 [label="1"]
+N38 [style=invis]
+N39 [style=invis]
+N37 -> N38 [style=invis]
+N37 -> N39 [style=invis]
+N40 [style=invis]
+N36 -> N37
+N36 -> N40 [style=invis]
+N41 [label="5"]
+N42 [style=invis]
+N43 [style=invis]
+N41 -> N42 [style=invis]
+N41 -> N43 [style=invis]
+N35 -> N36
+N35 -> N41
+N44 [label="7"]
+N45 [style=invis]
+N46 [style=invis]
+N44 -> N45 [style=invis]
+N44 -> N46 [style=invis]
+N34 -> N35
+N34 -> N44
+}

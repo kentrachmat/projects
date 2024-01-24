@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sorting &#8212; Module tp-rapide 0 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Module tp-rapide 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">sorting</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for sorting</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">:mod:`sorting` module : sorting functions module for quicksort assignment</span>
+
+<span class="sd">:author: ` FIL - FST - Univ. Lille &lt;http://portail.fil.univ-lille1.fr&gt;`_</span>
+
+<span class="sd">:date: 2018, january</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<div class="viewcode-block" id="merge"><a class="viewcode-back" href="../modules.html#sorting.merge">[docs]</a><span class="k">def</span> <span class="nf">merge</span> <span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span> <span class="n">cmp</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given two sorted arrays, creates a fresh sorted array.</span>
+<span class="sd">    </span>
+<span class="sd">    :param t1: An array of objects</span>
+<span class="sd">    :type t1: Array</span>
+<span class="sd">    :param t2: An array of objects</span>
+<span class="sd">    :type t1: Array</span>
+<span class="sd">    :param cmp: A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</span>
+<span class="sd">    :type cmp: function</span>
+<span class="sd">    :return: A fresh array, sorted.</span>
+<span class="sd">    :rtype: array</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+<span class="sd">    </span>
+<span class="sd">       time complexity of merge is :math:`O(n_1+n_2)` with</span>
+<span class="sd">       :math:`n_1` and :math:`n_2` resp. the length of *t1* and *t2*</span>
+
+<span class="sd">    &gt;&gt;&gt; import numpy</span>
+<span class="sd">    &gt;&gt;&gt; def cmp (x,y): </span>
+<span class="sd">    ...    if x == y:</span>
+<span class="sd">    ...       return 0</span>
+<span class="sd">    ...    elif x &lt; y:</span>
+<span class="sd">    ...       return -1</span>
+<span class="sd">    ...    else:</span>
+<span class="sd">    ...       return 1</span>
+<span class="sd">    &gt;&gt;&gt; t1 = numpy.array([0,2,5,6])</span>
+<span class="sd">    &gt;&gt;&gt; t2 = numpy.array([1,3,4])</span>
+<span class="sd">    &gt;&gt;&gt; merge(t1,t2,cmp)</span>
+<span class="sd">    array([0, 1, 2, 3, 4, 5, 6])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cmp</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">t2</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">t2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">:</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">:</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">t2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">t</span></div>
+
+
+<div class="viewcode-block" id="merge_sort"><a class="viewcode-back" href="../modules.html#sorting.merge_sort">[docs]</a><span class="k">def</span> <span class="nf">merge_sort</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">cmp</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A sorting function implementing the merge sort algorithm</span>
+<span class="sd">    </span>
+<span class="sd">    :param t: A array of integers</span>
+<span class="sd">    :type t: array</span>
+<span class="sd">    :param cmp: A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</span>
+<span class="sd">    :type cmp: function</span>
+<span class="sd">    :return: A fresh array, sorted.</span>
+<span class="sd">    :rtype: array</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">    </span>
+<span class="sd">       time complexity of merge is :math:`O(n_1+n_2)` with</span>
+<span class="sd">       :math:`n_1` and :math:`n_2` resp. the length of *t1* and *t2*</span>
+
+<span class="sd">    &gt;&gt;&gt; import generate</span>
+<span class="sd">    &gt;&gt;&gt; def cmp_element (x,y): </span>
+<span class="sd">    ...    return x.cmp(y)</span>
+<span class="sd">    &gt;&gt;&gt; t = generate.random_array(10)</span>
+<span class="sd">    &gt;&gt;&gt; merge_sort(t,cmp_element)</span>
+<span class="sd">    array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=object)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># cas de base</span>
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># cas general</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">((</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:((</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)]),</span><span class="n">cmp</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">((</span><span class="n">t</span><span class="p">[((</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span><span class="n">n</span><span class="p">]),</span><span class="n">cmp</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="n">cmp</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="quicksort"><a class="viewcode-back" href="../modules.html#sorting.quicksort">[docs]</a><span class="k">def</span> <span class="nf">quicksort</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">cmp</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A sorting function implementing the quicksort algorithm on the whole array *t*</span>
+<span class="sd">    </span>
+<span class="sd">    :param t: An array of Element</span>
+<span class="sd">    :type t: NumPy array</span>
+<span class="sd">    :param cmp: A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</span>
+<span class="sd">    :type cmp: function</span>
+<span class="sd">    :return: Nothing</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">       *t* is modified during the sort process</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span> <span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">}</span>
+    <span class="n">quicksort_slice</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">cmp</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="quicksort_slice"><a class="viewcode-back" href="../modules.html#sorting.quicksort_slice">[docs]</a><span class="k">def</span> <span class="nf">quicksort_slice</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">cmp</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A sorting function implementing the quicksort algorithm</span>
+<span class="sd">    </span>
+<span class="sd">    :param s: A slice of an array, that is a dictionary with 3 fields :</span>
+<span class="sd">              data, left, right representing resp. an array of objects and left</span>
+<span class="sd">              and right bounds of the slice.</span>
+<span class="sd">    :type s: dict</span>
+<span class="sd">    :param cmp: A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</span>
+<span class="sd">    :type cmp: function</span>
+<span class="sd">    :return: Nothing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span> <span class="p">:</span>
+        <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">cmp</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+        <span class="n">quicksort_slice</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">cmp</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+        <span class="n">quicksort_slice</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">cmp</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span></div>
+        
+
+<div class="viewcode-block" id="naive_pivot"><a class="viewcode-back" href="../modules.html#sorting.naive_pivot">[docs]</a><span class="k">def</span> <span class="nf">naive_pivot</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Returns a position for the pivot.</span>
+<span class="sd">    Systematically returns the first position of the slice as a naive choice.</span>
+
+<span class="sd">    &gt;&gt;&gt; s = {&#39;data&#39;: None, &#39;left&#39;: 2, &#39;right&#39;: 10}</span>
+<span class="sd">    &gt;&gt;&gt; naive_pivot(s)</span>
+<span class="sd">    2</span>
+<span class="sd">    &gt;&gt;&gt; s = {&#39;data&#39;: None, &#39;left&#39;: 3, &#39;right&#39;: 10}</span>
+<span class="sd">    &gt;&gt;&gt; naive_pivot(s)</span>
+<span class="sd">    3</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="partition"><a class="viewcode-back" href="../modules.html#sorting.partition">[docs]</a><span class="k">def</span> <span class="nf">partition</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">cmp</span><span class="p">,</span> <span class="n">pivot_pos</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates two slices from *s* by selecting in the first slice all</span>
+<span class="sd">    elements being less than the pivot and in the second one all other</span>
+<span class="sd">    elements.</span>
+
+<span class="sd">    :param s: A slice represented as a dictionary with 3 fields :</span>
+
+<span class="sd">              - data: the array of objects,</span>
+<span class="sd">              - left: left bound of the slice (a position in the array),</span>
+<span class="sd">              - right: right bound of the slice.</span>
+<span class="sd">    :type s: dict</span>
+<span class="sd">    :param cmp: A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</span>
+<span class="sd">    :type cmp: function</span>
+<span class="sd">    :param pivot_pos: The position at which we take the pivot in ``s[&#39;data&#39;]``</span>
+<span class="sd">    :type pivot_pos: int</span>
+<span class="sd">    :return: A couple of slices, the first slice contains all elements that are </span>
+<span class="sd">             less than the pivot, the second one contains all elements that are </span>
+<span class="sd">             greater than the pivot, the pivot does not belong to any slice.</span>
+<span class="sd">             At the end, in the array the pivot is after the left slice and before </span>
+<span class="sd">             the right slice.</span>
+<span class="sd">    :rtype: tuple</span>
+
+<span class="sd">    &gt;&gt;&gt; import generate</span>
+<span class="sd">    &gt;&gt;&gt; import element</span>
+<span class="sd">    &gt;&gt;&gt; import numpy</span>
+<span class="sd">    &gt;&gt;&gt; def cmp (x,y): </span>
+<span class="sd">    ...    if x == y:</span>
+<span class="sd">    ...       return 0</span>
+<span class="sd">    ...    elif x &lt; y:</span>
+<span class="sd">    ...       return -1</span>
+<span class="sd">    ...    else:</span>
+<span class="sd">    ...       return 1</span>
+<span class="sd">    &gt;&gt;&gt; t = numpy.array([element.Element(i) for i in [5, 6, 1, 3, 4, 9, 8, 2, 7]])</span>
+<span class="sd">    &gt;&gt;&gt; p = {&#39;left&#39;:0,&#39;right&#39;:len(t)-1,&#39;data&#39;:t}</span>
+<span class="sd">    &gt;&gt;&gt; p1,p2 = partition(p,cmp2,0)</span>
+<span class="sd">    &gt;&gt;&gt; list(p1[&#39;data&#39;][p1[&#39;left&#39;]:p1[&#39;right&#39;]+1])</span>
+<span class="sd">    [1, 3, 4, 2]</span>
+<span class="sd">    &gt;&gt;&gt; list(p2[&#39;data&#39;][p2[&#39;left&#39;]:p2[&#39;right&#39;]+1])</span>
+<span class="sd">    [6, 9, 8, 7]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">pivot_pos</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">pivot_index</span> <span class="o">=</span> <span class="n">random_pivot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]],</span> <span class="n">t</span><span class="p">[</span><span class="n">pivot_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">pivot_index</span><span class="p">]</span> <span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]]</span>
+    
+    <span class="k">elif</span> <span class="n">pivot_pos</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">pivot_index</span> <span class="o">=</span> <span class="n">optimal_pivot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">cmp</span><span class="p">)</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]],</span> <span class="n">t</span><span class="p">[</span><span class="n">pivot_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">pivot_index</span><span class="p">]</span> <span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]]</span>
+        
+    <span class="n">pivot_index</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span>
+    
+    <span class="n">i</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span> 
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">cmp</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">pivot_index</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="n">muter_tab</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">pivot_index</span><span class="p">)</span>
+            <span class="n">pivot_index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span>  <span class="p">({</span><span class="s1">&#39;left&#39;</span><span class="p">:</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">],</span><span class="s1">&#39;right&#39;</span><span class="p">:</span><span class="n">pivot_index</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">t</span><span class="p">},</span>
+             <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:</span><span class="n">pivot_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;right&#39;</span><span class="p">:</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">],</span><span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">t</span><span class="p">})</span></div>
+
+<span class="k">def</span> <span class="nf">cmp2</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+
+<div class="viewcode-block" id="random_pivot"><a class="viewcode-back" href="../modules.html#sorting.random_pivot">[docs]</a><span class="k">def</span> <span class="nf">random_pivot</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a random index of the slice of the array.</span>
+<span class="sd">    :param s: A slice of an array, that is a dictionnary with 3 fields.</span>
+<span class="sd">              data, left, right, an array of objects and left and right bounds of the slice.</span>
+<span class="sd">    :type s: dict</span>
+<span class="sd">    :return: a random index of the slice of the array.</span>
+<span class="sd">    :rtype: int.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">])</span></div>
+    
+    
+<div class="viewcode-block" id="muter_tab"><a class="viewcode-back" href="../modules.html#sorting.muter_tab">[docs]</a><span class="k">def</span> <span class="nf">muter_tab</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="n">index</span><span class="p">,</span> <span class="n">index_pivot</span><span class="p">)</span> <span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mutate the array &quot;tab&quot; by placing the element with index &quot;index&quot;</span>
+<span class="sd">    before the element with index &quot;index_pivot&quot;</span>
+<span class="sd">    </span>
+<span class="sd">    :param tab: An array of Element</span>
+<span class="sd">    :type tab: NumPy array</span>
+<span class="sd">    :pram index: the index of the element to be moved</span>
+<span class="sd">    :type index: int</span>
+<span class="sd">    :pram index_pivot:</span>
+<span class="sd">    :type index_pivot: int</span>
+<span class="sd">    :return: Nothing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">index</span>
+    
+    <span class="k">while</span> <span class="n">index_pivot</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">:</span>    
+        <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> </div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">doctest</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Module tp-rapide 0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">sorting</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2021, Aziz__BOURAHMA--Benedictus__KENT__RACHMAT, ULille.
+      Last updated on 08/03/2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

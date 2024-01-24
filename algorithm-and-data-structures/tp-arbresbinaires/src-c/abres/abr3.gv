@@ -1,0 +1,27 @@
+digraph G{
+N60 [label="7"]
+N61 [label="1"]
+N62 [style=invis]
+N63 [label="4"]
+N64 [label="2"]
+N65 [style=invis]
+N66 [style=invis]
+N64 -> N65 [style=invis]
+N64 -> N66 [style=invis]
+N67 [label="5"]
+N68 [style=invis]
+N69 [label="6"]
+N70 [style=invis]
+N71 [style=invis]
+N69 -> N70 [style=invis]
+N69 -> N71 [style=invis]
+N67 -> N68 [style=invis]
+N67 -> N69
+N63 -> N64
+N63 -> N67
+N61 -> N62 [style=invis]
+N61 -> N63
+N72 [style=invis]
+N60 -> N61
+N60 -> N72 [style=invis]
+}

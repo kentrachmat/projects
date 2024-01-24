@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>marker module &#8212; Module tp-experimentateur 0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="experience module" href="experience.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="experience.html" title="experience module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Module tp-experimentateur 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">marker</span></code> module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="marker-module">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">marker</span></code> module<a class="headerlink" href="#marker-module" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="marker.Marker">
+<em class="property">class </em><code class="sig-prename descclassname">marker.</code><code class="sig-name descname">Marker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/marker.html#Marker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#marker.Marker" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="marker.Marker.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/marker.html#Marker.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#marker.Marker.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new Marker.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>number</strong> (<em>int</em><em> (</em><em>must be greater</em><em> or </em><em>equal than zero</em><em>)</em>) – The number of the marker</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="marker.Marker.cmp">
+<code class="sig-name descname">cmp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/marker.html#Marker.cmp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#marker.Marker.cmp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compares this marker and <em>other</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#marker.Marker" title="marker.Marker"><em>Marker</em></a>) – The first marker</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>-1, 0 or 1 resp. if <em>self &lt; other</em>, <em>self</em> = <em>other</em> or <em>self</em> &gt; <em>other</em></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Marker</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">Marker</span><span class="p">(</span><span class="mi">234</span><span class="p">))</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Marker</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">Marker</span><span class="p">(</span><span class="mi">45</span><span class="p">))</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Marker</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">Marker</span><span class="p">(</span><span class="mi">24</span><span class="p">))</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="marker.Marker.markers">
+<em class="property">static </em><code class="sig-name descname">markers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/marker.html#Marker.markers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#marker.Marker.markers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of <em>p</em> markers. Markers are in random ordering.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p</strong> (<em>int</em>) – The number of markers (must be strictly greater than 0).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The list of markers</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List of String</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">marker</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">([</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">marker</span><span class="o">.</span><span class="n">Marker</span><span class="o">.</span><span class="n">markers</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+<span class="go">[&#39;m0&#39;, &#39;m1&#39;, &#39;m2&#39;, &#39;m3&#39;, &#39;m4&#39;, &#39;m5&#39;, &#39;m6&#39;, &#39;m7&#39;, &#39;m8&#39;, &#39;m9&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="experience.html"
+                        title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">experience</span></code> module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/marker.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="experience.html" title="experience module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Module tp-experimentateur 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">marker</span></code> module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2021, Aziz__BOURAHMA--Benedictus__KENT__RACHMAT, Univ. Lille.
+      Last updated on 14/02/2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

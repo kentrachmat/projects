@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experimentateur &#8212; Module tp-experimentateur 0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="experience module" href="experience.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="experience.html" title="experience module"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Module tp-experimentateur 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Experimentateur</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="experimentateur">
+<h1>Experimentateur<a class="headerlink" href="#experimentateur" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="experience.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">experience</span></code> module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="marker.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">marker</span></code> module</a></li>
+</ul>
+</div>
+<div class="section" id="etat-du-tp">
+<h2>Etat du TP<a class="headerlink" href="#etat-du-tp" title="Permalink to this headline">¶</a></h2>
+<p>Date : 05 / 02 / 2021</p>
+<ul class="simple">
+<li><p>Les deux premieres stratégies ont bien été implantées.</p></li>
+<li><p>Les réponses aux questions ont été faites, sauf la question <em>Question1.3.2</em> ou on n’arrive pas à déterminer le pire des cas de l’algorithme de tri.</p></li>
+</ul>
+</div>
+<div class="section" id="reponses-aux-questions">
+<h2>Réponses aux questions<a class="headerlink" href="#reponses-aux-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="strategie-1">
+<h3>1.2 Stratégie 1 :<a class="headerlink" href="#strategie-1" title="Permalink to this headline">¶</a></h3>
+<p>Réponses aux questions concernant la <em>stratégie 1</em>.</p>
+<div class="section" id="question-1-2-1">
+<h4><em>Question 1.2.1</em> :<a class="headerlink" href="#question-1-2-1" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>L’implantation de l’algorithme a bien été faite.</p>
+</div></blockquote>
+</div>
+<div class="section" id="question-1-2-2">
+<h4><em>Question 1.2.2</em> :<a class="headerlink" href="#question-1-2-2" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Pour étudier la complexité de cet algorithme, il est judicieux de compter le nombre d’opérations de comparaisons, <strong>OP</strong> = <em>comparaison</em>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="question-1-2-3">
+<h4><em>Question 1.2.3</em> :<a class="headerlink" href="#question-1-2-3" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Non</strong>, il n’existe pas de pire ou un meilleur des cas pour cet algorithme.</p></li>
+<li><p><em>Pour les marqueurs négatifs</em> :</p></li>
+</ul>
+<blockquote>
+<div><p>On effectue toujours <strong>(m - p) * p</strong> comparaisons.
+En effet pour chaque marqueur négatif, en question on a <strong>(m - p)</strong> et ces derniers seront comparer à tous les marqueurs positifs, on aura donc <strong>(m - p) * p</strong> comparaisons.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>Pour les marqueurs positifs</em> :</p></li>
+</ul>
+<blockquote>
+<div><p>Pour les marqueurs positifs, on effectue <strong>((p + 1)*p) / 2</strong> comparaisons.</p>
+<dl class="simple">
+<dt>En effet, pour tout marqueur positif il sera comparer exactement soit :</dt><dd><ul class="simple">
+<li><p>à un seul element de la liste positive, si l’élément à l’indice 0 de liste positive est bien ce marqueur positif.</p></li>
+<li><p>à 2 éléments de la liste positive, si l’élément à l’indice 1 de liste positive est bien ce marqueur positif.</p></li>
+<li><p>à 3 éléments de la liste positive, si l’élément à l’indice 2 de liste positive est bien ce marqueur positif.</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>à tous les éléments <strong>p</strong> de la liste positive , si l’élément à l’indice <strong>p-1</strong> de liste positive est bien ce marqueur positif.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="question-1-2-4">
+<h4><em>Question 1.2.4</em> :<a class="headerlink" href="#question-1-2-4" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Le nombre exact d’opérations OP en fonction de m et p est :</p>
+<blockquote>
+<div><p>c1(m,p) = (m - p) * p + ((p + 1)*p)/2.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="strategie-2">
+<h3>1.3. Stratégie 2 :<a class="headerlink" href="#strategie-2" title="Permalink to this headline">¶</a></h3>
+<p>Réponses aux questions concernant la <em>stratégie 2</em>.</p>
+<div class="section" id="question-1-3-1">
+<h4><em>Question 1.3.1</em> :<a class="headerlink" href="#question-1-3-1" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>L’implantation de l’algorithme a bien été faite.</p>
+</div></blockquote>
+</div>
+<div class="section" id="question-1-3-2">
+<h4><em>Question 1.3.2</em> :<a class="headerlink" href="#question-1-3-2" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul>
+<li><p><strong>Oui</strong>, il existe un pire des cas.</p>
+<p>En effet, le nombre de comparaisons dépend bel et bien de l’algorithme de la recherche dichotomique qu’a un nombre de comparaisons qu’est fixe dans tous les cas, mais en revanche l’algorithme de tri a bien un pire des cas en l’occurence celui.</p>
+<p>Le nombre de comparaisons dépend bel et bien de la fonction <em>dicho_search(markers, positive)</em> et de la fonction de tri <em>merge_sort(positive,compare)</em>.</p>
+<ul>
+<li><p>Le nombre exact d’opérations OP en fonction de m et p est :</p>
+<p><em>c2(m,p) = m * c(dicho_search(markers, positive)) + c(merge_sort(positive,compare))</em></p>
+<p><em>c2(m,p) = m * log2(p) + c(merge_sort(positive,compare))</em></p>
+</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="strategie-3">
+<h3>1.4. Stratégie 3 :<a class="headerlink" href="#strategie-3" title="Permalink to this headline">¶</a></h3>
+<p>Réponses aux questions concernant la <em>stratégie 3</em>.</p>
+<div class="section" id="question-1-4-1">
+<h4><em>Question 1.4.1</em> :<a class="headerlink" href="#question-1-4-1" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>L’implantation de l’algorithme a bien été faite.</p>
+</div></blockquote>
+</div>
+<div class="section" id="question-1-4-2">
+<h4><em>Question 1.4.2</em> :<a class="headerlink" href="#question-1-4-2" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul>
+<li><p><strong>Oui</strong>, il existe un pire des cas.</p></li>
+<li><p><strong>Pour le tri de la liste positive et markers :</strong></p>
+<p>Le pire des cas correspond à celui où à chaque appel récursif, la fusion demande le maximum de comparaisons, à savoir celui où les éléments de la liste triée finale proviennent alternativement des deux sous-listes triées. (wikipédia)</p>
+</li>
+<li><p><strong>Pour la recherche des marqueurs positif dans markers :</strong></p>
+<p>Cela correspond au cas ou les p éléments de la liste positive sont les p derniers éléments de la liste triée markers.</p>
+</li>
+</ul>
+<blockquote>
+<div><p>Dans le pire des cas pour chacun des (m - p) marqueurs négatifs on fait la recherche dichotomique sur toute la liste positive, on a donc :</p>
+<blockquote>
+<div><p>(m - p) * c(dicho_search(positive, markers))</p>
+</div></blockquote>
+</div></blockquote>
+<ul>
+<li><p>Pour les marqueurs positifs dans la liste markers, la recherche dichotomique se fait sur une partie de liste positive, selon l’indice de de chaque marqueur :</p>
+<ul class="simple">
+<li><p>pour le premier marqueur positive P(0) on a : c(dicho_search(positive, P(0)))</p></li>
+<li><p>pour le deuxieme marqueur positive P(2) on a : c(dicho_search(positive, P(2)))</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>pour le dernier marqueur positive P(P-1) on a : c(dicho_search(positive, P(P-1)))</p></li>
+</ul>
+</li>
+<li><p><strong>On a donc</strong> :</p>
+<p><em>c3(m, p)  =  (m-p) * c(dicho_search(markers, positive))+ ∑ (i=0 jusqu’a p-1) c(dicho_search(markers, positive)) + c(tri_fusion(p)) + c(tri_fusion(m))</em></p>
+<blockquote>
+<div><p><em>=  m * c(dicho_search(markers, positive)) + c(tri_fusion(p))  + c(tri_fusion(m))</em></p>
+<p><em>=  m * (1 + ⌈log2(p)⌉) + p * ⌈log2(p)⌉ + m * ⌈log2(m)⌉</em></p>
+</div></blockquote>
+</li>
+</ul>
+<blockquote>
+<div><p><strong>c3(m, p)  =  m * (1 + ⌈log2(m)⌉)  + (m+p) * ⌈log2(p)⌉</strong></p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="recherche-empirique-des-cas-favorables">
+<h3>1.5. Recherche empirique des cas favorables :<a class="headerlink" href="#recherche-empirique-des-cas-favorables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="question-1-5-1">
+<h4><em>Question 1.5.1</em> :<a class="headerlink" href="#question-1-5-1" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>Pour m = 10, p = 10, on voit bien que les deux stratégies 1 et 2 sont à peu prés de même ordre, mais pour m = 60 et p = 30 par exemple la stratégie 2 est beaucoup plus intéressante que la stratégie 1.</p>
+<p>En ce qui concerne la stratégie 3, elle ne sera plus performante que dans le cas ou la liste markers et positive sont déja triées et à condition que les p éléments de la liste positive sont les p premiers éléments de la liste triée markers.</p>
+</div></blockquote>
+</div>
+<div class="section" id="question-1-5-2">
+<h4><em>Question 1.5.2</em> :<a class="headerlink" href="#question-1-5-2" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p><strong>Pour m = 10 :</strong></p>
+<img alt="_images/tp1-10.png" src="_images/tp1-10.png" />
+<p><strong>Pour m = 20 :</strong></p>
+<img alt="_images/tp1-20.png" src="_images/tp1-20.png" />
+<p><strong>Pour m = 30 :</strong></p>
+<img alt="../images/tp1-30.png" src="../images/tp1-30.png" />
+<p><strong>Pour m = 40 :</strong></p>
+<img alt="../images/tp1-40.png" src="../images/tp1-40.png" />
+<p><strong>Pour m = 50 :</strong></p>
+<img alt="../images/tp1-50.png" src="../images/tp1-50.png" />
+<p><strong>Pour m = 60 :</strong></p>
+<img alt="../images/tp1-60.png" src="../images/tp1-60.png" />
+<p><strong>Pour m = 70 :</strong></p>
+<img alt="../images/tp1-70.png" src="../images/tp1-70.png" />
+<p><strong>Pour m = 80 :</strong></p>
+<img alt="../images/tp1-80.png" src="../images/tp1-80.png" />
+<p><strong>Pour m = 90 :</strong></p>
+<img alt="../images/tp1-90.png" src="../images/tp1-90.png" />
+<p><strong>Pour m = 100 :</strong></p>
+<img alt="../images/tp1-100.png" src="../images/tp1-100.png" />
+<p>Pour des listes de taille supérieur assez importante, on remarque que la stratégie 2 est plus performante.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Trier des listes (une structure de données en général) afin d’éffectuer une recherche peut être permettre d’aller plus vite dans la recherche, mais il faut prendre en compte le coup du tri de cette structure de données.</p>
+</div></blockquote>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Experimentateur</a><ul>
+<li><a class="reference internal" href="#etat-du-tp">Etat du TP</a></li>
+<li><a class="reference internal" href="#reponses-aux-questions">Réponses aux questions</a><ul>
+<li><a class="reference internal" href="#strategie-1">1.2 Stratégie 1 :</a><ul>
+<li><a class="reference internal" href="#question-1-2-1"><em>Question 1.2.1</em> :</a></li>
+<li><a class="reference internal" href="#question-1-2-2"><em>Question 1.2.2</em> :</a></li>
+<li><a class="reference internal" href="#question-1-2-3"><em>Question 1.2.3</em> :</a></li>
+<li><a class="reference internal" href="#question-1-2-4"><em>Question 1.2.4</em> :</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#strategie-2">1.3. Stratégie 2 :</a><ul>
+<li><a class="reference internal" href="#question-1-3-1"><em>Question 1.3.1</em> :</a></li>
+<li><a class="reference internal" href="#question-1-3-2"><em>Question 1.3.2</em> :</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#strategie-3">1.4. Stratégie 3 :</a><ul>
+<li><a class="reference internal" href="#question-1-4-1"><em>Question 1.4.1</em> :</a></li>
+<li><a class="reference internal" href="#question-1-4-2"><em>Question 1.4.2</em> :</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#recherche-empirique-des-cas-favorables">1.5. Recherche empirique des cas favorables :</a><ul>
+<li><a class="reference internal" href="#question-1-5-1"><em>Question 1.5.1</em> :</a></li>
+<li><a class="reference internal" href="#question-1-5-2"><em>Question 1.5.2</em> :</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="experience.html"
+                        title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">experience</span></code> module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="experience.html" title="experience module"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Module tp-experimentateur 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Experimentateur</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2021, Aziz__BOURAHMA--Benedictus__KENT__RACHMAT, Univ. Lille.
+      Last updated on 15/02/2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

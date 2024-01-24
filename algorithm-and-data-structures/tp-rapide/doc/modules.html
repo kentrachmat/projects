@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>element module &#8212; Module tp-rapide 0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Quicksort" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Quicksort"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Module tp-rapide 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">element</span></code> module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="element-module">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">element</span></code> module<a class="headerlink" href="#element-module" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="element.Element">
+<em class="property">class </em><code class="sig-prename descclassname">element.</code><code class="sig-name descname">Element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/element.html#Element"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#element.Element" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="element.Element.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/element.html#Element.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#element.Element.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="element.Element.cmp">
+<code class="sig-name descname">cmp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/element.html#Element.cmp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#element.Element.cmp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compares this element and <em>other</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#element.Element" title="element.Element"><em>Element</em></a>) – The other Element</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>-1, 0 or 1 resp. if <em>self &lt; other</em>, <em>self</em> = <em>other</em> or <em>self</em> &gt; <em>other</em></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Element</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">Element</span><span class="p">(</span><span class="mi">234</span><span class="p">))</span>
+<span class="go">-1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Element</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">Element</span><span class="p">(</span><span class="mi">45</span><span class="p">))</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Element</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">Element</span><span class="p">(</span><span class="mi">24</span><span class="p">))</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-generate">
+<span id="generate-module"></span><h1><a class="reference internal" href="#module-generate" title="generate"><code class="xref py py-mod docutils literal notranslate"><span class="pre">generate</span></code></a> module<a class="headerlink" href="#module-generate" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="#module-generate" title="generate"><code class="xref py py-mod docutils literal notranslate"><span class="pre">generate</span></code></a> module : list facilities module for quicksort assignment</p>
+<dl class="field-list simple">
+<dt class="field-odd">author</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://portail.fil.univ-lille1.fr">FIL - IEEA - Univ. Lille1.fr</a></p>
+</dd>
+<dt class="field-even">date</dt>
+<dd class="field-even"><p>2016, january</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="generate.decreasing_array">
+<code class="sig-prename descclassname">generate.</code><code class="sig-name descname">decreasing_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/generate.html#decreasing_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#generate.decreasing_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a fresh array with Element in decreasing order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> – The length of the array</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A array of Element from n-1 to 0</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NumPy array</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">decreasing_array</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">[2 1 0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="generate.increasing_array">
+<code class="sig-prename descclassname">generate.</code><code class="sig-name descname">increasing_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/generate.html#increasing_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#generate.increasing_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a fresh array with Element in increasing order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> – The length of the array</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A array of Element from 0 to n-1</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NumPy array</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">increasing_array</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">[0 1 2]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="generate.is_sorted">
+<code class="sig-prename descclassname">generate.</code><code class="sig-name descname">is_sorted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/generate.html#is_sorted"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#generate.is_sorted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicate to test whether an array is sorted in increasing order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>t</strong> (<em>NumPy array of Element</em>) – A array of Element</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the array is sorted, else False</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>    
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_sorted</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_sorted</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="generate.random_array">
+<code class="sig-prename descclassname">generate.</code><code class="sig-name descname">random_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/generate.html#random_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#generate.random_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a fresh array with Element in pseudo-random order. Each Element from
+0 to n-1 is present only once.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>n</strong> – The length of the array</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A array of Element from 0 to n-1</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>NumPy array</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">random_array</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">[0, 1, 2]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sorting">
+<span id="sorting-module"></span><h1><a class="reference internal" href="#module-sorting" title="sorting"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sorting</span></code></a> module<a class="headerlink" href="#module-sorting" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="#module-sorting" title="sorting"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sorting</span></code></a> module : sorting functions module for quicksort assignment</p>
+<dl class="field-list simple">
+<dt class="field-odd">author</dt>
+<dd class="field-odd"><p>` FIL - FST - Univ. Lille &lt;<a class="reference external" href="http://portail.fil.univ-lille1.fr">http://portail.fil.univ-lille1.fr</a>&gt;`_</p>
+</dd>
+<dt class="field-even">date</dt>
+<dd class="field-even"><p>2018, january</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="sorting.merge">
+<code class="sig-prename descclassname">sorting.</code><code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span></em>, <em class="sig-param"><span class="n">t2</span></em>, <em class="sig-param"><span class="n">cmp</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sorting.html#merge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sorting.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given two sorted arrays, creates a fresh sorted array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t1</strong> (<em>Array</em>) – An array of objects</p></li>
+<li><p><strong>t2</strong> – An array of objects</p></li>
+<li><p><strong>cmp</strong> (<em>function</em>) – A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A fresh array, sorted.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>time complexity of merge is <span class="math notranslate nohighlight">\(O(n_1+n_2)\)</span> with
+<span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> resp. the length of <em>t1</em> and <em>t2</em></p>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">cmp</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> 
+<span class="gp">... </span>   <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<span class="gp">... </span>      <span class="k">return</span> <span class="mi">0</span>
+<span class="gp">... </span>   <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+<span class="gp">... </span>      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gp">... </span>   <span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>      <span class="k">return</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">merge</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="n">cmp</span><span class="p">)</span>
+<span class="go">array([0, 1, 2, 3, 4, 5, 6])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sorting.merge_sort">
+<code class="sig-prename descclassname">sorting.</code><code class="sig-name descname">merge_sort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">cmp</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sorting.html#merge_sort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sorting.merge_sort" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sorting function implementing the merge sort algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> (<em>array</em>) – A array of integers</p></li>
+<li><p><strong>cmp</strong> (<em>function</em>) – A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A fresh array, sorted.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>time complexity of merge is <span class="math notranslate nohighlight">\(O(n_1+n_2)\)</span> with
+<span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> resp. the length of <em>t1</em> and <em>t2</em></p>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">generate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">cmp_element</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> 
+<span class="gp">... </span>   <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">generate</span><span class="o">.</span><span class="n">random_array</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">merge_sort</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">cmp_element</span><span class="p">)</span>
+<span class="go">array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=object)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sorting.muter_tab">
+<code class="sig-prename descclassname">sorting.</code><code class="sig-name descname">muter_tab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tab</span></em>, <em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">index_pivot</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sorting.html#muter_tab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sorting.muter_tab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutate the array “tab” by placing the element with index “index”
+before the element with index “index_pivot”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tab</strong> (<em>NumPy array</em>) – An array of Element</p>
+</dd>
+<dt class="field-even">Pram index</dt>
+<dd class="field-even"><p>the index of the element to be moved</p>
+</dd>
+<dt class="field-odd">Pram index_pivot</dt>
+<dd class="field-odd"><p></p></dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Nothing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sorting.naive_pivot">
+<code class="sig-prename descclassname">sorting.</code><code class="sig-name descname">naive_pivot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sorting.html#naive_pivot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sorting.naive_pivot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a position for the pivot.
+Systematically returns the first position of the slice as a naive choice.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">naive_pivot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">naive_pivot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sorting.partition">
+<code class="sig-prename descclassname">sorting.</code><code class="sig-name descname">partition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">cmp</span></em>, <em class="sig-param"><span class="n">pivot_pos</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sorting.html#partition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sorting.partition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates two slices from <em>s</em> by selecting in the first slice all
+elements being less than the pivot and in the second one all other
+elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> (<em>dict</em>) – <p>A slice represented as a dictionary with 3 fields :</p>
+<ul>
+<li><p>data: the array of objects,</p></li>
+<li><p>left: left bound of the slice (a position in the array),</p></li>
+<li><p>right: right bound of the slice.</p></li>
+</ul>
+</p></li>
+<li><p><strong>cmp</strong> (<em>function</em>) – A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</p></li>
+<li><p><strong>pivot_pos</strong> (<em>int</em>) – The position at which we take the pivot in <code class="docutils literal notranslate"><span class="pre">s['data']</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A couple of slices, the first slice contains all elements that are 
+less than the pivot, the second one contains all elements that are 
+greater than the pivot, the pivot does not belong to any slice.
+At the end, in the array the pivot is after the left slice and before 
+the right slice.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">generate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">element</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">cmp</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> 
+<span class="gp">... </span>   <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<span class="gp">... </span>      <span class="k">return</span> <span class="mi">0</span>
+<span class="gp">... </span>   <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+<span class="gp">... </span>      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gp">... </span>   <span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>      <span class="k">return</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">element</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;right&#39;</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">t</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">cmp2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">p1</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]:</span><span class="n">p1</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+<span class="go">[1, 3, 4, 2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">p2</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">p2</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]:</span><span class="n">p2</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+<span class="go">[6, 9, 8, 7]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sorting.quicksort">
+<code class="sig-prename descclassname">sorting.</code><code class="sig-name descname">quicksort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em>, <em class="sig-param"><span class="n">cmp</span></em>, <em class="sig-param"><span class="n">index</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sorting.html#quicksort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sorting.quicksort" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sorting function implementing the quicksort algorithm on the whole array <em>t</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> (<em>NumPy array</em>) – An array of Element</p></li>
+<li><p><strong>cmp</strong> (<em>function</em>) – A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Nothing</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>t</em> is modified during the sort process</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sorting.quicksort_slice">
+<code class="sig-prename descclassname">sorting.</code><code class="sig-name descname">quicksort_slice</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">cmp</span></em>, <em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sorting.html#quicksort_slice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sorting.quicksort_slice" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sorting function implementing the quicksort algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> (<em>dict</em>) – A slice of an array, that is a dictionary with 3 fields :
+data, left, right representing resp. an array of objects and left
+and right bounds of the slice.</p></li>
+<li><p><strong>cmp</strong> (<em>function</em>) – A comparison function, returning 0 if a == b, -1 is a &lt; b, 1 if a &gt; b</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Nothing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="sorting.random_pivot">
+<code class="sig-prename descclassname">sorting.</code><code class="sig-name descname">random_pivot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sorting.html#random_pivot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sorting.random_pivot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a random index of the slice of the array.
+:param s: A slice of an array, that is a dictionnary with 3 fields.</p>
+<blockquote>
+<div><p>data, left, right, an array of objects and left and right bounds of the slice.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a random index of the slice of the array.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-test">
+<span id="test-module"></span><h1><a class="reference internal" href="#module-test" title="test"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test</span></code></a> module<a class="headerlink" href="#module-test" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="#module-test" title="test"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test</span></code></a> module : test module for quicksort assignment</p>
+<dl class="field-list simple">
+<dt class="field-odd">author</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://portail.fil.univ-lille1.fr">FIL - IEEA - Univ. Lille1.fr</a></p>
+</dd>
+<dt class="field-even">date</dt>
+<dd class="field-even"><p>2016, january</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="test.cmp">
+<code class="sig-prename descclassname">test.</code><code class="sig-name descname">cmp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/test.html#cmp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#test.cmp" title="Permalink to this definition">¶</a></dt>
+<dd><p>A comparison function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> – First element</p></li>
+<li><p><strong>b</strong> – Second element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>0 if a == b, 1 if a &gt; b, -1 if a &lt; b</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">element</span> <span class="kn">import</span> <span class="n">Element</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cpt</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmp</span><span class="p">(</span><span class="n">Element</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">Element</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmp</span><span class="p">(</span><span class="n">Element</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="n">Element</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cmp</span><span class="p">(</span><span class="n">Element</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="n">Element</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">element</span></code> module</a></li>
+<li><a class="reference internal" href="#module-generate"><code class="xref py py-mod docutils literal notranslate"><span class="pre">generate</span></code> module</a></li>
+<li><a class="reference internal" href="#module-sorting"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sorting</span></code> module</a></li>
+<li><a class="reference internal" href="#module-test"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test</span></code> module</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Quicksort</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/modules.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Quicksort"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Module tp-rapide 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">element</span></code> module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2021, Aziz__BOURAHMA--Benedictus__KENT__RACHMAT, ULille.
+      Last updated on 08/03/2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

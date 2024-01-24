@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP-Iterateurs &#8212; Module tp-iterateurs 0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="listiterator module" href="listiterator.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="listiterator.html" title="listiterator module"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Module tp-iterateurs 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">TP-Iterateurs</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tp-iterateurs">
+<h1>TP-Iterateurs<a class="headerlink" href="#tp-iterateurs" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="listiterator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">listiterator</span></code> module</a></li>
+</ul>
+</div>
+<div class="section" id="etat-du-tp">
+<h2>Etat du TP<a class="headerlink" href="#etat-du-tp" title="Permalink to this headline">¶</a></h2>
+<p>Date : 17 / 03 / 2021</p>
+</div>
+<div class="section" id="reponses-aux-questions">
+<h2>Réponses aux questions<a class="headerlink" href="#reponses-aux-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="premiere-phase-la-liste-doublement-chainee">
+<h3>1. Première phase : la liste doublement chaînée<a class="headerlink" href="#premiere-phase-la-liste-doublement-chainee" title="Permalink to this headline">¶</a></h3>
+<p>ils sont bien implementé dans listliterator.py</p>
+</div>
+<div class="section" id="deuxieme-phase-ajout-des-iterateurs">
+<h3>2. Deuxième phase : ajout des itérateurs<a class="headerlink" href="#deuxieme-phase-ajout-des-iterateurs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="parcours-avec-des-iterateurs">
+<h4><em>Parcours avec des iterateurs</em> :<a class="headerlink" href="#parcours-avec-des-iterateurs" title="Permalink to this headline">¶</a></h4>
+<p>ils sont bien implementé dans listliterator.py</p>
+</div>
+<div class="section" id="insertion-avec-des-iterateurs">
+<h4><em>Insertion avec des itérateurs</em> :<a class="headerlink" href="#insertion-avec-des-iterateurs" title="Permalink to this headline">¶</a></h4>
+<p>le fonction add est bien implementé (doublement chaînées).</p>
+</div>
+<div class="section" id="iterateurs-a-partir-de-la-queue">
+<h4><em>Itérateurs à partir de la queue</em> :<a class="headerlink" href="#iterateurs-a-partir-de-la-queue" title="Permalink to this headline">¶</a></h4>
+<p>ils sont bien implementé dans listliterator.py et le test 9 est bien implémenté.</p>
+</div>
+<div class="section" id="suppression-avec-des-iterateurs">
+<h4><em>Suppression avec des itérateurs</em> :<a class="headerlink" href="#suppression-avec-des-iterateurs" title="Permalink to this headline">¶</a></h4>
+<p>1. Oui, il supprimera l’élément de l’itérateur et après la suppression, l’itérateur passera au suivant ou None.
+2,5. ils sont bien implementé
+3. pour interdira deux appels à remove successifs
+4.
+* lis = List()
+* for i in reversed(range(6,10)):
+*     lis.cons(i)
+* for j in reversed(range(5)):
+*     lis.cons(j)
+* it = lis.get_listiterator()
+* while it.hasNext():
+*     it.remove()</p>
+</div>
+<div class="section" id="performance-de-lacces-au-i-eme-element">
+<h4><em>Performance de l’accès au i-ème élément</em> :<a class="headerlink" href="#performance-de-lacces-au-i-eme-element" title="Permalink to this headline">¶</a></h4>
+<p>la fonction get et test 12 sont bien implementé.</p>
+<blockquote>
+<div><p><strong>Performance get et iterateurs</strong></p>
+<img alt="_images/performance_tp3.png" src="_images/performance_tp3.png" />
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">TP-Iterateurs</a><ul>
+<li><a class="reference internal" href="#etat-du-tp">Etat du TP</a></li>
+<li><a class="reference internal" href="#reponses-aux-questions">Réponses aux questions</a><ul>
+<li><a class="reference internal" href="#premiere-phase-la-liste-doublement-chainee">1. Première phase : la liste doublement chaînée</a></li>
+<li><a class="reference internal" href="#deuxieme-phase-ajout-des-iterateurs">2. Deuxième phase : ajout des itérateurs</a><ul>
+<li><a class="reference internal" href="#parcours-avec-des-iterateurs"><em>Parcours avec des iterateurs</em> :</a></li>
+<li><a class="reference internal" href="#insertion-avec-des-iterateurs"><em>Insertion avec des itérateurs</em> :</a></li>
+<li><a class="reference internal" href="#iterateurs-a-partir-de-la-queue"><em>Itérateurs à partir de la queue</em> :</a></li>
+<li><a class="reference internal" href="#suppression-avec-des-iterateurs"><em>Suppression avec des itérateurs</em> :</a></li>
+<li><a class="reference internal" href="#performance-de-lacces-au-i-eme-element"><em>Performance de l’accès au i-ème élément</em> :</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="listiterator.html"
+                        title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">listiterator</span></code> module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="listiterator.html" title="listiterator module"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Module tp-iterateurs 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">TP-Iterateurs</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Aziz__BOURAHMA--Benedictus__KENT__RACHMAT, Univ. Lille.
+      Last updated on 29/03/2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

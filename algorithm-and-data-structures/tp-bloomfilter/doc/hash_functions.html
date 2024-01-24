@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hash_functions module &#8212; Module tp-bloomfilter 0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="bloomfilter module" href="bloomfilter.html" />
+    <link rel="prev" title="tp-bloom" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="bloomfilter.html" title="bloomfilter module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="tp-bloom"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Module tp-bloomfilter 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">hash_functions</span></code> module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="hash-functions-module">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">hash_functions</span></code> module<a class="headerlink" href="#hash-functions-module" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="hash_functions.HashFunctions">
+<em class="property">class </em><code class="sig-prename descclassname">hash_functions.</code><code class="sig-name descname">HashFunctions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nb</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hash_functions.html#HashFunctions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#hash_functions.HashFunctions" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="hash_functions.HashFunctions.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nb</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hash_functions.html#HashFunctions.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#hash_functions.HashFunctions.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build hash functions for 128 characters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>nb</strong> (<em>int</em>) – Number of hash functions to be used</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hash_functions.HashFunctions.hash">
+<code class="sig-name descname">hash</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n_hash</span></em>, <em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hash_functions.html#HashFunctions.hash"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#hash_functions.HashFunctions.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hash associated to a string and a given hash function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_hash</strong> (<em>int</em>) – the number of the hash function (starting at 0)</p></li>
+<li><p><strong>s</strong> (<em>str</em>) – The string to compute the hash on</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The hash value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">UC</dt>
+<dd class="field-even"><p>0 &lt;= n_hash &lt; self.nb_functions()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="hash_functions.HashFunctions.nb_functions">
+<code class="sig-name descname">nb_functions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/hash_functions.html#HashFunctions.nb_functions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#hash_functions.HashFunctions.nb_functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of functions implemented by the object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Number of functions</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">HashFunctions</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">nb_functions</span><span class="p">()</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo_FIL.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">tp-bloom</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="bloomfilter.html"
+                        title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bloomfilter</span></code> module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/hash_functions.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="bloomfilter.html" title="bloomfilter module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="tp-bloom"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Module tp-bloomfilter 0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">hash_functions</span></code> module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016-2021, Aziz__BOURAHMA--Benedictus__Kent__RACHMAT, Univ. Lille1.
+      Last updated on 02/04/2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>
